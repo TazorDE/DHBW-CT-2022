@@ -7,6 +7,7 @@ isDisp = 0;
 % Hier kann ein beliebiger Absorptionskoeffizient erstellt werden
 % zBsp: Beispielbilder einfügen, Matlab Phantom Funktion, ...
 absCoeff = phantomgallery('smooth',N,4);
+absCoeff = 0;
 
 [A, b, x, theta, d, p] = paralleltomo(N, absCoeff,theta,p,d,isDisp);
 

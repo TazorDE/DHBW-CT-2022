@@ -199,8 +199,10 @@ A = sparse(rows,cols,vals,p*nA,N^2);
 
 if nargout > 1
     % Create phantom head as a reshaped vector.
-    % x = myphantom(N);
     x = absCoeff;
+    if absCoeff == 0
+        x = myphantom(N);
+    end
     x = x(:);
     % Create rhs.
     b = A*x;
@@ -208,7 +210,7 @@ end
 
 if nargout > 5
     d = 2*x0(end);
-end;
+end
 
 function X = myphantom(N)
 %MYPHANTOM creates the modified Shepp-Logan phantom
